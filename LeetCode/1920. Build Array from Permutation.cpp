@@ -4,12 +4,24 @@ A zero-based permutation nums is an array of distinct integers from 0 to nums.le
 */
 class Solution {
 public:
+    // This function takes in a vector of integers called 'nums'
+    // and returns a vector of integers
     vector<int> buildArray(vector<int>& nums) {
-        int n=nums.size();
+
+        // Initialize a variable 'n' to the size of 'nums'
+        int n = nums.size();
+
+        // Initialize a vector 'ans' of size 'n'
         vector<int> ans(n);
-        for(int i=0;i<n;i++){
-            ans[i]=nums[nums[i]];
+
+        // Iterate through the elements of 'nums'
+        for (int i = 0; i < n; i++) {
+            // Set the i-th element of 'ans' to the value at the index 
+            // specified by the i-th element of 'nums' in 'nums'
+            ans[i] = nums[nums[i]];
         }
+
+        // Return the modified 'ans' vector
         return ans;
     }
 };

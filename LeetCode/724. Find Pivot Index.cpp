@@ -10,16 +10,22 @@ Return the leftmost pivot index. If no such index exists, return -1.
 class Solution {
 public:
     int pivotIndex(vector<int>& nums){
-        int right_sum = accumulate(nums.begin(),nums.end(),0); 
-		//accumulate(first, last, sum) ,i.e sum : initial value of the sum
+// Initialize the sum of all elements in nums to right_sum
+        int right_sum = accumulate(nums.begin(),nums.end(),0);
+// Initialize left_sum to 0
         int left_sum = 0;
+// Iterate through all elements in nums
         for(int i = 0;i < nums.size();i++){
+// Subtract the current element from right_sum
             right_sum -= nums[i];
+// If left_sum is equal to right_sum, return the current index
             if(left_sum == right_sum){
                 return i;
             }
+// Add the current element to left_sum
             left_sum += nums[i];
         }
-        return -1;
+// If no pivot index is found, return -1
+    return -1;
     }
 };

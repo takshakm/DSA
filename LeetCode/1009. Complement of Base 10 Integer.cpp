@@ -7,17 +7,22 @@ Given an integer n, return its complement.
 class Solution {
 public:
     int bitwiseComplement(int n) {
-        int m=n;
-        int mask =0 ;
-        //edge case
-        if(n==0)
+        int m = n;
+        int mask = 0;
+        
+        // edge case: if n is 0, return 1
+        if(n == 0)
             return 1;
-        while(m!=0){
+        
+        // create a mask with all 1s of the same number of bits as n
+        while(m != 0) {
             mask = (mask << 1) | 1;
             m = m >> 1;
         }
+        
+        // take the bitwise complement of n and apply the mask to it
         int ans = (~n) & mask;
         
-    return ans;
+        return ans;
     }
 };
