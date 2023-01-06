@@ -46,25 +46,19 @@ int main(){
     cin>>value;
     int pos = 0;
     bool found = false;
-    while (myGames.size() > 0 && !found)
-    {
-        if (myGames.top() == value)
-        {
+    while (myGames.size() > 0 && !found){
+        if (myGames.top() == value){
             found = true;
         }
-        else
-        {
+        else{
             myGames.pop();
             ++pos;
         }
     }
-
-    if (found)
-    {
+    if (found){
         cout << "Element found at position: " << pos << endl;
     }
-    else
-    {
+    else{
         cout << "Element not found" << endl;
     }
     return 0;
